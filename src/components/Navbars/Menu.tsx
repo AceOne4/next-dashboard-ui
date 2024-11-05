@@ -1,3 +1,14 @@
+"use client";
+import { signOutAction } from "@/lib/actionServer";
+import { Session } from "next-auth";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+
+type Tsession = {
+  sesssion: Session | null;
+};
+
 const menuItems = [
   {
     title: "MENU",
@@ -112,3 +123,41 @@ const menuItems = [
     ],
   },
 ];
+
+export default function Menu({ sesssion }: Tsession) {
+  return (
+    <div className="mt-4 text-sm">
+      {menuItems.map((item) => (
+        <div className="flex flex-col gap-2" key={item.title}>
+          <span className="hidden lg:block text-gray-400 font-light my-3">
+            {item.title}
+          </span>
+          {item.items.map((i) => {
+            if (i.label === "Logout")
+              return (
+                <button
+                  key={i.label}
+                  onClick={async () => await signOutAction()}
+                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1 rounded-md hover:bg-lamaskyLight"
+                >
+                  <Image src={i.icon} alt={i.label} width={20} height={20} />
+                  <span className="hidden lg:block">{i.label}</span>
+                </button>
+              );
+            if (i.visible.includes(sesssion?.user.role))
+              return (
+                <Link
+                  href={i.href}
+                  key={i.label}
+                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1 rounded-md hover:bg-lamaskyLight"
+                >
+                  <Image src={i.icon} alt={i.label} width={20} height={20} />
+                  <span className="hidden lg:block">{i.label}</span>
+                </Link>
+              );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}

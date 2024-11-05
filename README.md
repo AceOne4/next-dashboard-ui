@@ -36,35 +36,46 @@ The Aceschool Dashboard centralizes school administration and supports role-base
    ```
 
 2. **Install dependencies**
+
+   ```bash
    npm install
 
+
+   ```
+
 3. **Set up environment variables**
-   (create a .env.local file and configure database and other required variables)
+
+- (create a .env.local file and configure database and other required variables)
+
 4. **Run the development server**
+
+   ```bash
    npm run dev
+
+   ```
 
 ## Features
 
-**Completed Features**
+### Completed Features
 
-User Management: Role-based access for Admin, Teacher, Student, and Parent with unique permissions.
-Login System: Secure login with role-specific access control.
-Dashboard Analytics: Key insights on school metrics, with role-based data.
-Attendance Tracking: Teachers can mark and view attendance for classes.
-Class and Subject Management: Admins and teachers can manage classes and subjects.
-Notifications: Real-time notifications for announcements, updates, and personalized warnings.
-Messaging: Public and private chat for streamlined communication.
-Mobile Responsiveness: Fully responsive for mobile devices.
-Accessibility: Improvements for a better user experience.
+- **User Management**: Role-based access for Admin, Teacher, Student, and Parent with unique permissions.
+- **Login System**: Secure login with role-specific access control.
+- **Dashboard Analytics**: Key insights on school metrics, with role-based data.
+- **Attendance Tracking**: Teachers can mark and view attendance for classes.
+- **Class and Subject Management**: Admins and teachers can manage classes and subjects.
+- **Notifications**: Real-time notifications for announcements, updates, and personalized warnings.
+- **Messaging**: Public and private chat for streamlined communication.
+- **Mobile Responsiveness**: Fully responsive for mobile devices.
+- **Accessibility**: Improvements for a better user experience.
 
-**In Progress Features**
+### In Progress Features
 
-Attendance Tracking: Enhanced functionality, including automated absence reporting (In Progress).
-Gradebook Feature: Expanded reporting and analytics for grading data (In Progress).
-Event Management: Schedule and manage school events like parent-teacher meetings(In Progress).
+- **Attendance Tracking**: Enhanced functionality, including automated absence reporting (In Progress).
+- **Gradebook Feature**: Expanded reporting and analytics for grading data (In Progress).
+- **Event Management**: Schedule and manage school events like parent-teacher meetings (In Progress).
 
 ## Contributors
 
-Ahmed Yassin - "AceOne4"
+- Ahmed Yassin - "AceOne4"
 
 Thank you for checking out Aceschool Dashboard! For any issues, feel free to submit a pull request or raise an issue.
